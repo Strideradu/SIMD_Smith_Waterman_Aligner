@@ -23,54 +23,36 @@
  */
 
 /* 
- * File:   Reader.h
+ * File:   ReaderFactory.h
  * Author: Nan
  *
- * Created on April 3, 2017, 8:25 PM
+ * Created on April 4, 2017, 1:40 PM
  */
 
-#ifndef READER_H
-#define READER_H
-
-#include <vector>
+#ifndef READERFACTORY_H
+#define READERFACTORY_H
 #include <memory>
-#include <stdio.h>
+#include "Reader.h"
 
-constexpr uint32_t kSmallBufferSize = 4 * 1024; // 4 kB
-constexpr uint32_t kMediumBufferSize = 5 * 1024 * 1024; // 5 MB
-constexpr uint32_t kLargeBufferSize = 500 * 1024 * 1024; // 500 MB
-
-/**
- * \brief Class readers for sequence file
- *
- * Reader for read file, may extend to read alignment file
+template<class T, template<class T_> class U>
+/*
+ *  class for reader factory
  */
-template<class T>
-class Reader {
+class ReaderFactory {
 public:
-    Reader();
+    virtual ~ReaderFactory();
     
-    virtual ~Reader();
-    
-    // virtual function to read object
-    virtual bool read_objects(std::vector<std::unique_ptr<T>>& dst, uint64_t max_bytes) = 0;
-
+    /** \brief Create the reader
+     * \returns New reader object */
+    std::unique_ptr<Reader<T>> Create(const std::string& path) = 0;
 protected:
-    Reader(FILE* input_file): input_file_(input_file, fclose), buffer_(kSmallBufferSize, 0),num_objects_read_(0) {}                
+    ReaderFactory();
     
     /** \brief Copy constructor disabled */
-    Reader(const Reader& orig) = delete;
-    
-    /** \brief Assignment constructor disabled */
-    const Reader& operator=(const Reader&) = delete;
-    
-    std::unique_ptr<FILE, int(*)(FILE*)> input_file_;
-    std::vector<char> buffer_;
-    uint64_t num_objects_read_;
-    
+    ReaderFactory(const ReaderFactory& orig) = 0;
 private:
 
 };
 
-#endif /* READER_H */
+#endif /* READERFACTORY_H */
 

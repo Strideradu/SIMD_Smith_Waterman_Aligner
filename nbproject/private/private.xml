@@ -7,10 +7,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Nan/Documents/GitHub/SIMD_Smith_Waterman_Aligner/ReaderFactory.cpp</file>
+            <file>file:/C:/Users/Nan/Documents/GitHub/SIMD_Smith_Waterman_Aligner/main.cpp</file>
             <file>file:/C:/Users/Nan/Documents/GitHub/SIMD_Smith_Waterman_Aligner/Seq.cpp</file>
             <file>file:/C:/Users/Nan/Documents/GitHub/SIMD_Smith_Waterman_Aligner/Seq.h</file>
-            <file>file:/C:/Users/Nan/Documents/GitHub/SIMD_Smith_Waterman_Aligner/main.cpp</file>
+            <file>file:/C:/Users/Nan/Documents/GitHub/SIMD_Smith_Waterman_Aligner/ReaderFactory.h</file>
             <file>file:/C:/Users/Nan/Documents/GitHub/SIMD_Smith_Waterman_Aligner/Reader.h</file>
+            <file>file:/C:/Users/Nan/Documents/GitHub/SIMD_Smith_Waterman_Aligner/Reader.cpp</file>
         </group>
     </open-files>
 </project-private>
