@@ -2,11 +2,13 @@
 <configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles" displayName="头文件" projectFiles="true">
+      <itemPath>FastaReader.h</itemPath>
       <itemPath>Reader.h</itemPath>
       <itemPath>ReaderFactory.h</itemPath>
       <itemPath>Seq.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
+      <itemPath>FastaReader.cpp</itemPath>
       <itemPath>Reader.cpp</itemPath>
       <itemPath>ReaderFactory.cpp</itemPath>
       <itemPath>Seq.cpp</itemPath>
@@ -43,6 +45,10 @@
           <commandlineTool>g++</commandlineTool>
         </ccTool>
       </compileType>
+      <item path="FastaReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FastaReader.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Reader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Reader.h" ex="false" tool="3" flavor2="0">
@@ -80,6 +86,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="FastaReader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FastaReader.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Reader.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Reader.h" ex="false" tool="3" flavor2="0">

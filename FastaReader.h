@@ -22,10 +22,40 @@
  * THE SOFTWARE.
  */
 
+/* 
+ * File:   FastaReader.h
+ * Author: Nan
+ *
+ * Created on April 4, 2017, 2:44 PM
+ */
+
+#ifndef FASTAREADER_H
+#define FASTAREADER_H
+
 #include "Reader.h"
 
-/** \brief Destructor */
-template<typename T>
-Reader<T>::~Reader() {
-}
+/**
+ * \brief Class readers for fasta file
+ *
+ * Reader for fasta file, derived from Reader.h
+ */
+template<class T>
+class FastaReader: public Reader<T> {
+public:
+    virtual ~FastaReader();
+    bool read_objects(std::vector<std::unique_ptr<T>>& dst, uint64_t max_bytes);
+private:
+    /** \brief Constructor */
+    FastaReader(FILE* input_file): Reader<T>(input_file), large_buffer_(kMediumBufferSize, 0) {}
+    
+    /** \brief Copy constructor disabled */
+    FastaReader(const FastaReader&) = delete;
+    
+    /** \brief Assignment constructor disabled */
+    const FastaReader& operator=(const FastaReader&) = delete;
+
+    std::vector<char> large_buffer_;
+};
+
+#endif /* FASTAREADER_H */
 

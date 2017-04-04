@@ -48,14 +48,13 @@ constexpr uint32_t kLargeBufferSize = 500 * 1024 * 1024; // 500 MB
 template<class T>
 class Reader {
 public:
-    Reader();
-    
     virtual ~Reader();
     
     // virtual function to read object
     virtual bool read_objects(std::vector<std::unique_ptr<T>>& dst, uint64_t max_bytes) = 0;
 
 protected:
+    /** \brief Constructor */
     Reader(FILE* input_file): input_file_(input_file, fclose), buffer_(kSmallBufferSize, 0),num_objects_read_(0) {}                
     
     /** \brief Copy constructor disabled */

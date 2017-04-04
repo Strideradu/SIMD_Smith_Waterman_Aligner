@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/FastaReader.o \
 	${OBJECTDIR}/Reader.o \
 	${OBJECTDIR}/ReaderFactory.o \
 	${OBJECTDIR}/Seq.o \
@@ -64,6 +65,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/simd_smith_waterman_aligner.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/simd_smith_waterman_aligner ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/FastaReader.o: FastaReader.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/FastaReader.o FastaReader.cpp
 
 ${OBJECTDIR}/Reader.o: Reader.cpp 
 	${MKDIR} -p ${OBJECTDIR}
