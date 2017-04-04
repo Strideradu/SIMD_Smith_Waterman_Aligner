@@ -2,11 +2,10 @@
 <configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles" displayName="头文件" projectFiles="true">
-      <itemPath>Fasta.h</itemPath>
+      <itemPath>Reader.h</itemPath>
       <itemPath>Seq.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles" displayName="源文件" projectFiles="true">
-      <itemPath>Fasta.cpp</itemPath>
       <itemPath>Seq.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
@@ -33,10 +32,15 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <cTool>
+          <standard>10</standard>
+        </cTool>
+        <ccTool>
+          <standard>8</standard>
+          <commandlineTool>g++</commandlineTool>
+        </ccTool>
       </compileType>
-      <item path="Fasta.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Fasta.h" ex="false" tool="3" flavor2="0">
+      <item path="Reader.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Seq.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -54,9 +58,11 @@
       <compileType>
         <cTool>
           <developmentMode>5</developmentMode>
+          <standard>10</standard>
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <standard>8</standard>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -65,9 +71,7 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="Fasta.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="Fasta.h" ex="false" tool="3" flavor2="0">
+      <item path="Reader.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Seq.cpp" ex="false" tool="1" flavor2="0">
       </item>

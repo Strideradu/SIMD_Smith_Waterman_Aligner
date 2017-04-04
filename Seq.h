@@ -28,6 +28,7 @@
  *
  * Created on April 3, 2017, 7:32 PM
  */
+#include <string>
 
 #ifndef SEQ_H
 #define SEQ_H
@@ -38,6 +39,9 @@ public:
     Seq(const Seq& orig);
     virtual ~Seq();
 private:
+    std::string name_;
+    std::string data_;
+    std::string quality_;
 
 };
 

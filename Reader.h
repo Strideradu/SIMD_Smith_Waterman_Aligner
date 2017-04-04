@@ -23,23 +23,29 @@
  */
 
 /* 
- * File:   Fasta.h
+ * File:   Reader.h
  * Author: Nan
  *
- * Created on April 3, 2017, 7:02 PM
+ * Created on April 3, 2017, 8:25 PM
  */
 
-#ifndef FASTA_H
-#define FASTA_H
+#ifndef READER_H
+#define READER_H
 
-class Fasta {
+#include <vector>
+#include <memory>
+
+class Reader {
 public:
-    Fasta();
-    Fasta(const Fasta& orig);
-    virtual ~Fasta();
+    Reader();
+    Reader(const Reader& orig);
+    virtual ~Reader();
+    
+    // virtual function to read object
+    virtual bool read_objects(std::vector<std::unique_ptr<Reader>>& dst, uint64_t max_bytes) = 0;
 private:
 
 };
 
-#endif /* FASTA_H */
+#endif /* READER_H */
 
