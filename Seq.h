@@ -29,6 +29,7 @@
  * Created on April 3, 2017, 7:32 PM
  */
 #include <string>
+#include <stdint.h>
 
 #ifndef SEQ_H
 #define SEQ_H
@@ -38,7 +39,13 @@ public:
     Seq();
     Seq(const Seq& orig);
     virtual ~Seq();
+    Seq(uint64_t id, const char* name, uint32_t name_length, const char* data, uint32_t data_length);
+
+    Seq(uint64_t id, const char* name, uint32_t name_length, const char* data,uint32_t data_length, const char* quality, uint32_t quality_length);
+    
+    
 private:
+    uint64_t id_;
     std::string name_;
     std::string data_;
     std::string quality_;

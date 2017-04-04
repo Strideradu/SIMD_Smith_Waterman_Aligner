@@ -30,13 +30,43 @@
  */
 
 #include <cstdlib>
+#include "ReaderFactory.h"
+#include "Seq.h"
+//#include "Reader.h"
+#include "bioparser.h"
 
 using namespace std;
+using namespace bioparser;
 
+class Read {
+    public:
+        Read(uint64_t id, const char* name, uint32_t name_length, const char* data,
+            uint32_t data_length)
+                : id_(id), name_(name, name_length), data_(data, data_length), quality_() {
+        }
+
+        Read(uint64_t id, const char* name, uint32_t name_length, const char* data,
+            uint32_t data_length, const char* quality, uint32_t quality_length)
+                : id_(id), name_(name, name_length), data_(data, data_length),
+                quality_(quality, quality_length) {
+        }
+
+        uint64_t id_;
+        std::string name_;
+        std::string data_;
+        std::string quality_;
+};
 /*
  * 
  */
 int main(int argc, char** argv) {
+    
+    
+    ReaderFactory factory;
+        
+    //FastaReader reader;
+    auto reader = createReader<Read, FastaReader>(argv[1]);
+    std::vector<std::unique_ptr<Seq>> test;
 
     return 0;
 }

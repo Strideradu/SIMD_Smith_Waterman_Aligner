@@ -44,6 +44,7 @@ class FastaReader: public Reader<T> {
 public:
     virtual ~FastaReader();
     bool read_objects(std::vector<std::unique_ptr<T>>& dst, uint64_t max_bytes);
+    //friend std::unique_ptr<Reader<T>> createReader<T, FastaReader>(const std::string& path);
 private:
     /** \brief Constructor */
     FastaReader(FILE* input_file): Reader<T>(input_file), large_buffer_(kMediumBufferSize, 0) {}

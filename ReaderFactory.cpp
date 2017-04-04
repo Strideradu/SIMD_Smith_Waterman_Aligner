@@ -29,15 +29,27 @@
  * Created on April 4, 2017, 1:40 PM
  */
 
+#include <assert.h>
 #include "ReaderFactory.h"
 
 /** \brief Constructor */
-template<class T, template<class T_> class U>
-ReaderFactory<T, U>::ReaderFactory() {
+ReaderFactory::ReaderFactory() {
 }
 
 /** \brief Destructor */
-template<class T, template<class T_> class U>
-ReaderFactory<T, U>::~ReaderFactory() {
+ReaderFactory::~ReaderFactory() {
 }
+
+ReaderFactory::ReaderFactory(const ReaderFactory& orig) {
+}
+
+template<class T, template<class T_> class U>
+std::unique_ptr<Reader<T>> ReaderFactory:: Create(const std::string& path) {
+
+    auto input_file = fopen(path.c_str(), "r");
+    assert(input_file != nullptr && "Unable to open file");
+
+    return std::unique_ptr<Reader<T>>(new U<T>(input_file));
+}
+
 

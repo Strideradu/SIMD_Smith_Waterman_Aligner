@@ -33,23 +33,27 @@
 #define READERFACTORY_H
 #include <memory>
 #include "Reader.h"
+#include "FastaReader.h"
 
-template<class T, template<class T_> class U>
+
 /*
  *  class for reader factory
  */
 class ReaderFactory {
 public:
+    ReaderFactory();
     virtual ~ReaderFactory();
+    
+    /** \brief Copy constructor disabled */
+    ReaderFactory(const ReaderFactory& orig);
     
     /** \brief Create the reader
      * \returns New reader object */
-    std::unique_ptr<Reader<T>> Create(const std::string& path) = 0;
-protected:
-    ReaderFactory();
+    template<class T, template<class T_> class U>
+    std::unique_ptr<Reader<T>> Create(const std::string& path);
+protected:  
+
     
-    /** \brief Copy constructor disabled */
-    ReaderFactory(const ReaderFactory& orig) = 0;
 private:
 
 };
