@@ -25,8 +25,10 @@
       <runprofile version="9">
         <runcommandpicklist>
           <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "C:\Users\Nan\Documents\GitHub\SIMD_Smith_Waterman_Aligner\data\"</runcommandpicklistitem>
+          <runcommandpicklistitem>"${OUTPUT_PATH}" "C:\Users\Nan\Documents\GitHub\SIMD_Smith_Waterman_Aligner\data\sensitivety_query.fasta"</runcommandpicklistitem>
         </runcommandpicklist>
-        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <runcommand>"${OUTPUT_PATH}" "C:\Users\Nan\Documents\GitHub\SIMD_Smith_Waterman_Aligner\data\sensitivety_query.fasta"</runcommand>
         <rundir></rundir>
         <buildfirst>true</buildfirst>
         <terminal-type>0</terminal-type>
